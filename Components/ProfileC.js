@@ -10,6 +10,7 @@ import TokenChecker from '../utilities/TokenChecher';
 import PulseLoader from "react-spinners/PulseLoader";
 import ExitConfirmC from './ExitConfirmC';
 import MyChallengeC from './MyChallengeC';
+import MySupportationsC from './MySupportationsC'
 
 
 const ProfileC = () => {
@@ -68,6 +69,8 @@ const ProfileC = () => {
                     return <MyPaymentsC setShowData={setShowData} isDesktop={isDesktop}/>;
                 case 4:
                     return <MyChallengeC setShowData={setShowData} isDesktop={isDesktop}/>
+                case 5:
+                    return <MySupportationsC setShowData={setShowData} isDesktop={isDesktop}/>
                 default:
                     return <UserInfoesC setShowData={setShowData} isDesktop={isDesktop}/>;
             }
@@ -149,7 +152,7 @@ const ProfileC = () => {
                 showExit&&<ExitConfirmC showExit={showExit} setShowExit={setShowExit} />
             }
                {/*First Parent ------------------------------  */}
-               <div className='flex max-h-[730px] flex-col pb-6 mb-24 lg:mb-4 lg:w-4/12 py-4 border border-secondary600 rounded-[10px]'>
+               <div className='flex max-h-[820px] flex-col pb-6 mb-24 lg:mb-4 lg:w-4/12 py-4 border border-secondary600 rounded-[10px]'>
                    <div className='flex justify-between px-9 h-[64px] items-center'>
                       <div  className='flex flex-col' >
                           <span  className='text-[20px] text-secondary600'>نام کاربری</span>
@@ -160,7 +163,7 @@ const ProfileC = () => {
                       </button>
                    </div>
                    <div  className='mt-8 w-full px-9 flex justify-between items-center'>
-                      <span className='text-[20px] text-secondary600'>همراهی ها من </span>
+                      <span className='text-[20px] text-secondary600'>همراهی ها من</span>
                       <div className='flex'>
                          <span className='text-[20px]'>{FormatNumber('1000000')}</span>
                          <span>ریال</span>
@@ -189,7 +192,23 @@ const ProfileC = () => {
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 17.308L8.692 12L14 6.692l.708.708l-4.6 4.6l4.6 4.6z"/></svg>
                          </div>
+                         <hr className='border-b-2  mx-9'/>
+                          <div style={{color:witchTab==5&&'#004adf'}} onClick={()=>clickHandler(5)} className='flex justify-between cursor-pointer  px-9 items-center text-[16px] text-secondary600  my-4'>
+                            <div  className='flex'>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
+                                    <g fill="currentColor" stroke="#000" strokeLinejoin="round" strokeWidth={1}>
+                                        <path d="M16 6.28a2.28 2.28 0 0 1-.662 1.606c-.976.984-1.923 2.01-2.936 2.958a.597.597 0 0 1-.822-.017l-2.918-2.94a2.28 2.28 0 0 1 0-3.214a2.277 2.277 0 0 1 3.232 0L12 4.78l.106-.107A2.276 2.276 0 0 1 16 6.28Z"></path>
+                                        <path strokeLinecap="round" d="m18 20l3.824-3.824a.6.6 0 0 0 .176-.424V10.5A1.5 1.5 0 0 0 20.5 9v0a1.5 1.5 0 0 0-1.5 1.5V15"></path>
+                                        <path strokeLinecap="round" d="m18 16l.858-.858a.48.48 0 0 0 .142-.343v0a.49.49 0 0 0-.268-.433l-.443-.221a2 2 0 0 0-2.308.374l-.895.895a2 2 0 0 0-.586 1.414V20M6 20l-3.824-3.824A.6.6 0 0 1 2 15.752V10.5A1.5 1.5 0 0 1 3.5 9v0A1.5 1.5 0 0 1 5 10.5V15"></path>
+                                        <path strokeLinecap="round" d="m6 16l-.858-.858A.5.5 0 0 1 5 14.799v0c0-.183.104-.35.268-.433l.443-.221a2 2 0 0 1 2.308.374l.895.895a2 2 0 0 1 .586 1.414V20"></path>
+                                    </g>
+                                </svg></span>
+                                <span className='mr-3'>دعوت به حمایت ها</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 17.308L8.692 12L14 6.692l.708.708l-4.6 4.6l4.6 4.6z"/></svg>
+                         </div>
                          <hr className='border-b-2'/>
+
 
                          <span className='text-[16px] text-secondary600 my-4 px-9'>پویش ها </span>
                          <div style={{color:witchTab==4&&'#004adf'}} onClick={()=>clickHandler(4)} className='flex justify-between cursor-pointer  px-9 items-center text-[16px] text-secondary600'>
