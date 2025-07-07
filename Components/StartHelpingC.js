@@ -114,7 +114,7 @@ const StartHelpingC = () => {
                  <span className="text-xl text-primary500 font-bold "> چالش ها و پویش های </span><span className="text-xl font-bold mr-1"> فعال </span>
                  <span className="block w-full mt-3 text-secondary500 ">همراهی در چالش‌ها و کمپین‌های آزادی فعال در تهران</span>
             </div>
-            <div className={`flex flex-wrap ${challenge?.length > 3&& 'justify-between'} mt-16 mr-2 md:mr-20 `}>
+            <div className={`flex flex-wrap ${challenge?.length > 3 && 'justify-between'} mt-16 mr-2 md:mr-20 `}>
                 {Array.isArray(challenge)&&challenge?.map((item)=>{
                     return(
                         <div key={item.ChallengeUID} className={`w-full sm:w-[45%] lg:w-[31%] mb-8  ${challenge.length<4&&'ml-8'} `}>

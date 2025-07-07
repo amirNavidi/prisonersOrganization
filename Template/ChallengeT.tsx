@@ -26,8 +26,7 @@ interface EnterValue {
 }
 
 const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any },{} ) => {
-
-
+    
     const router:any =useRouter();
     const [whichPage , setWhichPage] =useState('');
 

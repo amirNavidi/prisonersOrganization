@@ -28,7 +28,7 @@
     "utils/**/*",
     "pages/api/**/*",
     "templates/**/*"
-  ],
+, "Template/SupportationComponent.tsx"  ],
   "exclude": [
     "node_modules",
     "dist"

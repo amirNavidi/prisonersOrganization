@@ -1,4 +1,15 @@
+import { useState } from "react";
+import SupportationComponent from "../Template/SupportationComponent";
+
 const MySupportationsC = () => {
+    const [challengeInfoes , setChallengeInfoes] =useState({
+        ChallengeName:"",
+        ChallengeImage:"ddd",
+        ShareLink:"string",
+        Viewers:"number" ,
+        Supporters : "number" ,
+        TotalAmount:"number"
+    })
     return (
         <div className="flex flex-col mx-4 ">
             <span className="text-xl font-medium">دعوت به حمایت ها</span>
@@ -82,6 +93,10 @@ const MySupportationsC = () => {
                         </button>
                     </div>
               </div>
+
+
+              {/* Supportation component ------------------------------- */}
+              <SupportationComponent data={challengeInfoes} />
 
         </div>
     );
