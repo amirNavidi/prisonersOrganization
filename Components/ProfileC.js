@@ -261,7 +261,7 @@ const ProfileC = () => {
             {/* secound parent------------------------------------------ */}
                 <div
                         style={dynamicStyle}
-                        className="flex flex-col pb-6 mb-24 lg:mb-4 b  py-4 border border-secondary600 rounded-[10px]  px-4"
+                        className="flex flex-col pb-6 mb-24 lg:mb-4 b pt-4 md:pt-10 border border-secondary600 rounded-[10px]  px-4"
                         >
                         {renderComponent()}
                 </div>

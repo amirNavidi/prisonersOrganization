@@ -26,7 +26,7 @@ interface EnterValue {
 }
 
 const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any },{} ) => {
-    
+
     const router:any =useRouter();
     const [whichPage , setWhichPage] =useState('');
 
@@ -83,7 +83,7 @@ const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any 
                     <span className='text-secondary700'>کل مبلغ</span>
                     <span>{Number(ChallengePrice).toLocaleString('fa-IR')}<span> ریال </span></span>
                 </div>
-                <div className='flex justify-between text-sm my-5'>
+                <div className='flex justify-between text-sm mt-2 mb-8'>
                     <span className='text-secondary700'>بدهی باقی مانده</span>
                     <span>{remainingAmount.toLocaleString('fa-IR')}<span> ریال </span></span>
                 </div>
@@ -92,7 +92,7 @@ const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any 
                 </Progress>
 
                 {
-                    whichPage=="profile"&& <div className="flex items-center justify-between mt-4 text-sm text-tertiary700">
+                    whichPage=="profile"&& <div className="flex items-center justify-between mt-7 text-sm text-tertiary700">
                     <div className="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
                             <path fill="none" stroke="#a87811" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={1} d="M12 6v5.8a.2.2 0 0 1-.2.2H8m14 0c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"></path>
                         </svg><span className="mr-2"> شروع چالش </span></div>
@@ -106,7 +106,7 @@ const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any 
                 </div>
                 }
 
-                <div className="flex items-center justify-between mt-4 text-sm text-tertiary700">
+                <div className="flex items-center justify-between  mt-2  text-sm text-tertiary700">
                     <div className="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
                             <path fill="none" stroke="#a87811" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={1} d="M12 6v5.8a.2.2 0 0 1-.2.2H8m14 0c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"></path>
                         </svg><span className="mr-2"> پایان چالش </span></div>
@@ -118,10 +118,10 @@ const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any 
                 </div>
                 <div className="flex justify-center">
                     {
-                        whichPage?<div className='w-full flex'>
-                            <button onClick={editHandler} className={`w-[45%] h-[50px] text-primary500 border border-primary500 rounded-xl my-6 mx-auto`}>ویرایش</button>
-                            <button  className={`w-[45%] h-[50px] bg-primary500 text-white rounded-xl my-6 mx-auto`}>جزئیات</button>
-                        </div>:  <button onClick={clickHandler} className={`'w-11/12 p-3 h-[50px] bg-primary500 text-white rounded-xl my-6 mx-auto`}>یاری میکنم</button>
+                        whichPage?<div className='w-full flex justify-between '>
+                            <button onClick={editHandler} className={`w-[49%] h-[42px] text-primary500 border border-primary500 rounded-lg my-6`}>ویرایش</button>
+                            <button  className={`w-[48%] h-[42px] bg-primary500 text-white rounded-lg my-6 `}>جزئیات</button>
+                        </div>:  <button onClick={clickHandler} className={`'w-11/12 p-3 h-[42px] bg-primary500 text-white rounded-lg my-6 mx-auto`}>یاری میکنم</button>
                     }
 
                 </div>

@@ -4,7 +4,7 @@ import MyPaymentT from "../Template/MyPaymentT";
 
 const MyPaymentsC = ({ setShowData, isDesktop }) => {
     const [active , setActive]=useState(1);
-    
+
     const customerUID = Cookies.get('CustomerUID')
     const token =Cookies.get('token');
     const [returendData , setReturnedData] =useState([]);
@@ -23,15 +23,15 @@ const MyPaymentsC = ({ setShowData, isDesktop }) => {
         const faild =data.data.filter(item=>!item.IsConfirm)
         setReturnedData(data.data);
         setStatus({
-            success, 
+            success,
             faild
         })
-        
+
     }
     useEffect(()=>{
         getReceipet();
     },[]);
-    
+
 
     return (
         <div className="className='flex flex-col'">
@@ -43,14 +43,14 @@ const MyPaymentsC = ({ setShowData, isDesktop }) => {
                     </button>
                     <span className=' text-[20px] mx-auto text-secondary600 mb-5'> پرداخت های من </span>
                 </div>
-                
+
             }
-            <div className='relative w-full flex  my-[50px]'>
+            <div className='relative w-full flex  mb-[50px]'>
                 <button onClick={()=>{setActive(1)}}  className='relative border-b-2 border-[#f0f0f1] flex justify-center w-4/12 text-center '><span className={`${active==1 &&  'absolute w-6/12 border-b-[2px] border-Base text-Base font-semibold' } block   pb-2 `} >موفق</span></button>
                 <button onClick={()=>{setActive(2)}}  className='relative border-b-2 border-[#f0f0f1] flex justify-center w-4/12 text-center '><span className={`${active==2  &&  'absolute w-6/12 border-b-[2px] border-Base text-Base font-semibold' } block   pb-2 `} >ناموفق</span></button>
                 <button onClick={()=>{setActive(3)}}  className='relative border-b-2 border-[#f0f0f1] flex justify-center w-4/12 text-center '><span className={`${active==3 &&  'absolute w-6/12 border-b-[2px] border-Base text-Base font-semibold' } block   pb-2 `} >نامشخص</span></button>
             </div>
-            
+
             <div className='flex flex-col items-center px-4 lg:px-20'>
                 {
                     active ===3 &&<div>مقداری برای نمایش وجود ندارد</div>

@@ -47,19 +47,19 @@ const MyChallengeC = ({isDesktop , setShowData})  => {
         {
             isDesktop||
             <div className="flex">
-                <button onClick={clickHandler} className='flex justify-start mb-5'>
+                <button onClick={clickHandler} className='flex justify-start mb-12'>
                     <svg className="" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
                 </button>
-                <span className=' text-[20px] mx-auto text-secondary600 mb-5'>{SelectedChallenge?"ویرایش":createMod?"افزودن پویش جدید":"همه پویش"}</span>
+                <span className=' text-[20px] mx-auto text-secondary600 mb-5'>{SelectedChallenge?"ویرایش":createMod?"افزودن پویش جدید":"همه پویش ها"}</span>
             </div>
 
         }
         {
          createMod ? <CreateNewChallengeC setCreateMod={setCreateMod}  /> :
          <div className="flex flex-col ">
-            <div className='flex justify-between'>
-            <div className='w-2/3 flex justify-between'>
-                <button className='w-[32%] py-2 px-1 flex justify-between outline-none border-2 rounded-xl text-secondary600'>
+            <div className='flex flex-wrap justify-between'>
+            <div className='w-full sm:w-2/3 flex justify-between'>
+                <button className='w-[32%] h-[40px] px-1 flex justify-between items-center outline-none border-2 rounded-xl text-secondary600'>
                     <span className='text-sm font-normal'>وضعیت</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 24 24">
                         <path fill="none" stroke="#565656" strokeDasharray={12} strokeDashoffset={12} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16l-7 -7M12 16l7 -7">
@@ -67,7 +67,7 @@ const MyChallengeC = ({isDesktop , setShowData})  => {
                         </path>
                     </svg>
                 </button>
-                <button className='w-[32%] py-2 px-1 flex justify-between outline-none border-2 rounded-xl text-secondary600'>
+                <button className='w-[32%] h-[40px] px-1 flex justify-between items-center outline-none border-2 rounded-xl text-secondary600'>
                     <span className='text-sm font-normal'>دسته پویش</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 24 24">
                         <path fill="none" stroke="#565656" strokeDasharray={12} strokeDashoffset={12} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16l-7 -7M12 16l7 -7">
@@ -75,7 +75,7 @@ const MyChallengeC = ({isDesktop , setShowData})  => {
                         </path>
                     </svg>
                 </button>
-                <button className='w-[32%] py-2 px-1 flex justify-between outline-none border-2 rounded-xl text-secondary600'>
+                <button className='w-[32%] h-[40px] px-1 flex justify-between items-center outline-none border-2 rounded-xl text-secondary600'>
                     <span className='text-sm font-normal'>مرتب سازی</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 24 24">
                         <path fill="none" stroke="#565656" strokeDasharray={12} strokeDashoffset={12} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16l-7 -7M12 16l7 -7">
@@ -84,14 +84,14 @@ const MyChallengeC = ({isDesktop , setShowData})  => {
                     </svg>
                 </button>
             </div>
-            <button onClick={createHandler} className='text-white text-sm bg-secondary600 border-2 px-2 rounded-xl'>
+            <button onClick={createHandler} className='w-full sm:w-[30%] mt-2 sm:mt-0 text-white text-sm bg-secondary600 border-2 h-10 px-2 rounded-xl'>
                 افزودن پویش جدید
             </button>
             </div>
-            <div className={`flex flex-wrap ${challenges?.length > 3&& 'justify-between'} mt-16 mr-2 `}>
+            <div className={`flex flex-wrap ${challenges?.length > 3&& 'justify-between'} mt-10 `}>
                 {Array.isArray(challenges)&&challenges?.map((item)=>{
                     return(
-                        <div key={item.ChallengeUID} className={`w-full sm:w-[45%] lg:w-[45%] mb-8 `}>
+                        <div key={item.ChallengeUID} className={`w-full sm:w-[48%]  mb-8 `}>
                             <ChallengeT setCreateMod={setCreateMod} data={item} />
                         </div>
                     )
