@@ -37,11 +37,11 @@ const MyPaymentsC = ({ setShowData, isDesktop }) => {
         <div className="className='flex flex-col'">
             {
                 isDesktop||
-                <div className="flex">
-                    <button onClick={()=>setShowData(true)} className='flex justify-start mb-5'>
+                <div className="flex relative mb-10 ">
+                    <button onClick={()=>setShowData(true)} className='absolute right-[-10px] flex w-[28px] justify-start mb-12  '>
                         <svg className="" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M13.292 12L9.046 7.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354z"/></svg>
                     </button>
-                    <span className=' text-[20px] mx-auto text-secondary600 mb-5'> پرداخت های من </span>
+                    <span className='block w-full text-center text-[20px]  text-secondary600 '>پرداخت های من</span>
                 </div>
 
             }

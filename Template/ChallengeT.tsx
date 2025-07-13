@@ -25,7 +25,12 @@ interface EnterValue {
 
 }
 
-const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any },{} ) => {
+interface EnterValues {
+    data:EnterValue;
+    setCreateMod?:(value:boolean)=>void
+}
+
+const ChallengeT = ({data ,setCreateMod }: EnterValues ) => {
 
     const router:any =useRouter();
     const [whichPage , setWhichPage] =useState('');
@@ -49,7 +54,7 @@ const ChallengeT = ({data ,setCreateMod }:{ data: EnterValue , setCreateMod:any 
     const remainingAmount =Number(ChallengePrice)-Number(HelpPrice);
     const editHandler=()=>{
         Cookies.set("SelectedChallenge",ChallengeUID);
-        setCreateMod(true);
+       setCreateMod?.(true);
     }
 
 

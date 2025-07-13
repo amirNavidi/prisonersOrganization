@@ -258,6 +258,8 @@ const ProfileC = () => {
                          </div>
                    </div>
                </div>
+
+               
             {/* secound parent------------------------------------------ */}
                 <div
                         style={dynamicStyle}
