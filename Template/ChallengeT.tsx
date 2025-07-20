@@ -3,6 +3,7 @@ import { Progress } from "@radix-ui/react-progress";
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import HeaderOfChallengeC from "../Components/HeaderOfChallengeC";
+import Link from 'next/link';
 
 interface EnterValue {
     CompanyName:string;
@@ -49,7 +50,7 @@ const ChallengeT = ({data ,setCreateMod }: EnterValues ) => {
             query: { cahllenge: ChallengeUID }
         });
     }
-    console.log(router);
+
 
     const remainingAmount =Number(ChallengePrice)-Number(HelpPrice);
     const editHandler=()=>{
@@ -73,7 +74,6 @@ const ChallengeT = ({data ,setCreateMod }: EnterValues ) => {
                     </div>
                 </div>:<HeaderOfChallengeC />
             }
-
             <img className="w-full h-[150px] bg-black" src={ChallengeImage} alt='challenge-banner'/>
 
             <div className='mt-5 mx-4'>
@@ -123,10 +123,10 @@ const ChallengeT = ({data ,setCreateMod }: EnterValues ) => {
                 </div>
                 <div className="flex justify-center">
                     {
-                        whichPage?<div className='w-full flex justify-between '>
-                            <button onClick={editHandler} className={`w-[49%] h-[42px] text-primary500 border border-primary500 rounded-lg my-6`}>ویرایش</button>
-                            <button  className={`w-[48%] h-[42px] bg-primary500 text-white rounded-lg my-6 `}>جزئیات</button>
-                        </div>:  <button onClick={clickHandler} className={`'w-11/12 p-3 h-[42px] bg-primary500 text-white rounded-lg my-6 mx-auto`}>یاری میکنم</button>
+                        whichPage?<div className='w-full flex justify-between'>
+                            <button onClick={editHandler} className={`w-[49%] h-[42px] text-primary500 text-sm border border-primary500 rounded-lg my-6`}>ویرایش</button>
+                            <Link href={`/profile/see-my-challenge-details/?challengeID=${ChallengeUID} `} className={`w-[48%] h-[42px] flex justify-center items-center bg-primary500 text-white text-sm rounded-lg my-6 `}>مشاهده جزئیات</Link>
+                        </div>:<button onClick={clickHandler} className={`w-full  p-3 h-[42px] bg-primary500 text-white rounded-lg my-6 mx-auto`}>یاری میکنم</button>
                     }
 
                 </div>

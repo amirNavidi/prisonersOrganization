@@ -7,9 +7,11 @@ import Igap from "../public/images/igap.svg"
 import Gap from "../public/images/gap.png"
 import Soroush from "../public/images/soroush.svg"
 import NavigationButtonC from './NavigationButtonC';
+import { useRouter } from 'next/router';
 
 
 const FooterC = () => {
+    const router =useRouter();
     return (
         <div>
             <div className="w-full hidden lg:flex flex-wrap justify-between items-end  lg:px-[120px] h-[380px] pb-12 bg-primary50 ">
@@ -85,9 +87,13 @@ const FooterC = () => {
                     طراحی و توسعه داده شده در <a target='_blank' rel="noopener noreferrer" href='https://sepandbi.com/' className='text-primary500'>تصمیم یاران بهینه سپند</a>. تمام حقوق اين وب‌سايت متعلق به سازمان زندان ها می باشد.
                  </div>
             </div>
-            <div className='w-full block md:hidden'>
-                 <NavigationButtonC />
-            </div>
+            {
+                router.pathname.includes('/choosing-challenge')||
+                <div className='w-full block md:hidden'>
+                    <NavigationButtonC />
+                </div>
+            }
+
         </div>
     );
 };

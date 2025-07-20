@@ -100,10 +100,10 @@ const AllChallengesC = () => {
                     </button>
               </div>
 
-                        <div className={`flex flex-wrap ${challenge?.length > 3 && 'justify-between'} mt-16 mr-2 md:mr-20 `}>
+                        <div className={`flex flex-wrap ${challenge?.length > 3 && 'justify-between'} mt-16`}>
                             {Array.isArray(challenge)&&challenge?.map((item)=>{
                                 return(
-                                    <div key={item.ChallengeUID} className={`w-full sm:w-[45%] lg:w-[31%] mb-8  ${challenge.length<4&&'ml-8'} `}>
+                                    <div key={item.ChallengeUID} className={`w-full sm:w-[45%] lg:w-[31%] mb-8 ${challenge.length<4&&'sm:ml-8'} `}>
                                         <ChallengeT key={item.ChallengeUID} data={item} />
                                     </div>
                                 )

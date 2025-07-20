@@ -1,6 +1,5 @@
 import { useState } from "react";
 import SupportationComponent from "../Template/SupportationComponent";
-import LeftBoxInSupportationDetailsT from "../Template/LeftBoxInSupportationDetailsT"
 
 type MyComponentProps={
   isDesktop :boolean;
@@ -16,9 +15,7 @@ const MySupportationsC = ({isDesktop , setShowData }:MyComponentProps) => {
         Supporters : "number" ,
         TotalAmount:"number"
     })
-    const test=()=>{
-        alert("hi")
-    }
+
     return (
         <div className="flex flex-col mx-4 ">
              {
@@ -117,7 +114,7 @@ const MySupportationsC = ({isDesktop , setShowData }:MyComponentProps) => {
 
               {/* Supportation component ------------------------------- */}
               <SupportationComponent data={challengeInfoes} />
-               {/* <LeftBoxInSupportationDetailsT  data={challengeInfoes}/> */}
+
         </div>
     );
 };
